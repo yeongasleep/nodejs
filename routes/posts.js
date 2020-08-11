@@ -31,7 +31,7 @@ router.get("/:id",function(req,res) {
 })
 
 router.get("/:id/edit",function(req,res) {
-    Post.findeOne({_id:req.params.id},function(err,post) {
+    Post.findOne({_id:req.params.id},function(err,post) {
         if(err)
             return res.json(err);
         res.render("posts/edit",{post:post});
